@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ActPod 互動式 Podcast 平台</title>
+  <link rel="icon" type="image/png" href="./src/assets/actpod_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header, section, footer {
+      padding: 0;
+    }
+    header {
+      width: 100%;
+      height: 100vh;
+      background-image: url('./src/assets/actpod_site_background.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    .btn {
+      background-color: #FFC107;
+      color: #000;
+      padding: 0.75rem 1.75rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #ffb300;
+    }
+    section {
+      width: 100%;
+      background-color: #f9f9f9;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    section:nth-child(even) {
+      background-color: #ffffff;
+    }
+    h2 {
+      color: #FFC107;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-image {
+      display: block;
+      width: 100%;
+      max-width: 960px;
+      margin: 1rem auto 2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    ul li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.95rem;
+    }
+    footer span {
+      color: #FFC107;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="./src/assets/logo.jpg" alt="ActPod Logo" style="width: 80px; height: 80px; border-radius: 12px;">
+      <h1><span style="color: #FFF; font-weight: 700; letter-spacing: 2px;">Act</span><span style="color: #FFC107; font-weight: 700;">Pod</span></h1>
+    </div>
+    <p>你的互動式 Podcast 創作與變現平台</p>
+    <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
+      <a href="#" style="display: inline-flex; align-items: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 64px;">
+      </a>
+      <a href="#" style="display: inline-flex; align-items: center;">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" style="height: 68px;">
+      </a>
+    </div>
+  </header>
+
+  <section class="features">
+    <h2>功能特色</h2>
+    <img class="section-image" src="https://via.placeholder.com/960x480?text=功能介紹" alt="功能介紹圖片">
+    <ul>
+      <li>🎤 簡單錄音，無需剪輯經驗</li>
+      <li>💬 聽眾語音互動，建立真實連結</li>
+      <li>💰 打賞系統，支持創作者持續創作</li>
+    </ul>
+  </section>
+
+  <section class="pricing">
+    <h2>價格方案</h2>
+    <img class="section-image" src="https://via.placeholder.com/960x480?text=價格方案" alt="價格方案圖片">
+    <p>平台提供免費與付費會員制度：</p>
+    <ul>
+      <li>👤 免費會員：無法提領打賞收益，捐贈轉換率 2:8</li>
+      <li>👑 付費會員：每月 NT$149，可提領收益，轉換率 7:3</li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h2>使用者回饋</h2>
+    <img class="section-image" src="https://via.placeholder.com/960x480?text=使用者回饋" alt="使用者回饋圖片">
+    <p>「ActPod 讓我終於踏出 Podcast 的第一步！」</p>
+    <p>「互動功能真的超棒，聽眾的留言我都能直接回覆！」</p>
+  </section>
+
+  <section class="faq">
+    <h2>常見問題</h2>
+    <img class="section-image" src="https://via.placeholder.com/960x480?text=常見問題" alt="常見問題圖片">
+    <ul>
+      <li><strong>Q：我需要剪輯經驗嗎？</strong><br>A：不需要，ActPod 幫你簡化所有操作。</li>
+      <li><strong>Q：怎麼提領打賞收益？</strong><br>A：成為會員後即可每月申請提領。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 <span>ActPod 艾帕科技有限公司</span></p>
+    <p>聯絡我們：contact.us@actpodapp.com ｜ IG：@actpod</p>
+  </footer>
+</body>
+</html>
