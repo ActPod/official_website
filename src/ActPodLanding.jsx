@@ -270,9 +270,19 @@ const Hero = () => (
           Actpod 是一個全新的 Podcast 平台，打造一個更貼近聽眾的 Podcast
           空間，建立 Podcaster 和聽眾之間更緊密的雙向互動。
         </p>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <PrimaryButton href="#download">立即免費下載</PrimaryButton>
-          <GhostButton href="#features">了解特色</GhostButton>
+        <div className="mt-8 items-center ">
+          <div className="mb-4 flex items-center gap-4">
+            <a href="https://www.instagram.com/actpod/#">
+              <img className="w-10" src="assets/instagram.png" alt="" />
+            </a>
+            <a href="mailto:contact.us@actpodapp.com">
+              <img className="w-10" src="assets/gmail.png" alt="" />
+            </a>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <PrimaryButton href="#download">立即免費下載</PrimaryButton>
+            <GhostButton href="#features">了解特色</GhostButton>
+          </div>
         </div>
         <div className="mt-8 flex items-center gap-3 text-xs text-gray-600">
           <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-green-500" />
@@ -624,13 +634,14 @@ const CTA = () => (
       </div>
 
       {/* 版權年份 */}
-      <span className="text-gray-400 text-sm">
-        © 2025 艾帕科技有限公司
-      </span>
+      <span className="text-gray-400 text-sm">© 2025 艾帕科技有限公司</span>
 
       {/* 地址 */}
       <span className="text-gray-500 text-sm">
         桃園市桃園區宏昌十二街532號2樓
+      </span>
+      <span className="text-gray-500 text-sm">
+        <a href="mailto:contact.us@actpodapp.com">contact.us@actpodapp.com</a>
       </span>
     </Container>
   </section>
