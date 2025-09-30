@@ -1,3 +1,4 @@
+import { p } from "framer-motion/client";
 import React from "react";
 
 // --- Small helper components ---
@@ -435,17 +436,25 @@ const Community = () => (
           {
             name: "無厘頭生存",
             role: "Podcaster",
-            quote: "ActPod 讓我更容易接觸到我的聽眾。",
+            quote: "無厘頭的凌凌X正經八百的嘉嘉X偶爾亂入的祐G\n帶你進入工程師的日常生活👩‍💻\n無厘頭，不無聊，這就是生存之道👍",
+            pic: "https://story.actpodapp.com/user/avatar/687bc22af58db60001691eda",
           },
           {
             name: "小人物職場",
             role: "Podcaster",
-            quote: "數據儀表板讓我們更懂聽眾。",
+            quote: "Hi 我是小人物，工作超過15年，文組畢業後跨領域轉職5次,目前於全球2000強企業負責軟體開發，擔任軟體產品經理/產品負責人 Product Manager/ Product Owner。",
+            pic:"https://story.actpodapp.com/user/avatar/68ad97634969fc000186be7f",
           },
           {
             name: "吾言少女",
             role: "Podcaster",
-            quote: "社群合作幫我們找到新聽眾。",
+            quote: "想把好劇推給更多人知道，所以創立了「吾劇吾述」。內容會以陸劇、台劇為主，原因很單純，就是語言！我想要聽聲音、看畫面就好。",
+            pic:"https://story.actpodapp.com/user/avatar/6881b47b9076730001898b79",
+          },{
+            name: "來點人生薯條",
+            role: "Podcaster",
+            quote: "薯條's channel",
+            pic:"https://story.actpodapp.com/user/avatar/68444775bbde08000186f72e",
           },
         ].map((t, i) => (
           <div
@@ -453,12 +462,13 @@ const Community = () => (
             className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-amber-200" />
+              <img className="h-10 w-10 rounded-full bg-amber-200" src={t.pic} />
               <div>
                 <div className="text-sm font-semibold">{t.name}</div>
                 <div className="text-xs text-gray-500">{t.role}</div>
               </div>
             </div>
+            <p className="mt-4 text-sm text-gray-600 whitespace-pre-line">{t.quote}</p>
           </div>
         ))}
       </div>
