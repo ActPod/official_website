@@ -234,11 +234,13 @@ const Nav = () => (
       </div>
       <nav className="hidden items-center gap-6 text-sm text-gray-700 md:flex">
         <a href="#features" className="hover:text-black">
-          特色
+          產品特色
         </a>
-        {/* <a href="#flow" className="hover:text-black">流程</a> */}
+        <a href="#plans" className="hover:text-black">
+          會員方案
+        </a>
         <a href="#community" className="hover:text-black">
-          社群
+          創作者
         </a>
         {/* <a href="#download" className="hover:text-black">
           下載
@@ -369,48 +371,115 @@ const FeatureCard = ({ icon, title, desc }) => (
   </div>
 );
 
-const Flow = () => (
-  <section id="flow" className="bg-gradient-to-b from-white to-amber-50 py-20">
+const MembershipPlans = () => (
+  <section id="plans" className="bg-white py-20">
     <Container>
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl font-bold sm:text-4xl">
-          從靈感到上架，只要 3 步
-        </h2>
-        <p className="mt-4 text-gray-600">
-          錄音 → 編輯 → 發布，一站完成，讓創作更專注。
-        </p>
+        <h2 className="text-3xl font-bold sm:text-4xl">成為 ActPod 會員</h2>
+        <p className="mt-4 text-gray-600">解鎖更多功能，讓流量變現</p>
       </div>
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+
+      <div className="mt-12 grid gap-6 md:grid-cols-4">
         {[
           {
-            step: "01",
-            title: "錄音 / 上傳",
-            desc: "行動裝置或桌面立即開錄，也能匯入既有音檔。",
+            name: "Free 會員",
+            price: "0",
+            desc: "",
+            benefits: [
+              "單集 60 分鐘（包含已添加之聽眾留言）",
+              "分潤比 2:8（會員:平台）",
+              "僅可創建 1 個頻道",
+              "不可提領",
+            ],
           },
           {
-            step: "02",
-            title: "編輯 / 整理",
-            desc: "AI 自動生成標題、描述與標籤，快速完成節目準備。",
+            name: "Pro 方案",
+            price: "150",
+            benefits: [
+              "單集 60 分鐘（包含已添加之聽眾留言）",
+              "分潤比 7:3（會員:平台）",
+              "可提領",
+            ],
           },
           {
-            step: "03",
-            title: "一鍵發布",
-            desc: "同步到主要平台，並即時追蹤成效。",
+            name: "Studio 方案",
+            price: "400",
+            benefits: [
+              "單集 90 分鐘（包含已添加之聽眾留言）",
+              "分潤比 8:2（會員:平台）",
+              "可提領",
+              "可上架付費內容",
+            ],
           },
-        ].map((s, i) => (
+          {
+            name: "Union 方案",
+            price: "150",
+            tag: "早鳥限定 3 折",
+            originalPrice: "500",
+            highlight: false,
+            benefits: [
+              "單集 120 分鐘（包含已添加之聽眾留言）",
+              "分潤比 8:2（會員:平台）",
+              "可提領",
+              "可上架付費內容",
+              "聯盟代碼",
+            ],
+          },
+        ].map((plan, i) => (
           <div
             key={i}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="rounded-2xl border border-black/10 bg-white p-6 text-center shadow-sm"
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-sm text-center ${
+              plan.highlight ? "ring-2 ring-amber-400" : ""
+            }`}
           >
-            <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-black text-xs font-bold text-white">
-              {s.step}
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold">{plan.name}</h3>
+              {plan.tag && (
+                <span className="rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
+                  {plan.tag}
+                </span>
+              )}
             </div>
-            <h3 className="text-lg font-semibold">{s.title}</h3>
-            <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
+
+            <div className="my-6 flex items-baseline justify-center gap-1">
+              {plan.originalPrice && (
+                <span className="text-sm text-gray-400 line-through">
+                  ${plan.originalPrice}
+                </span>
+              )}
+              <span
+                className={`text-3xl font-bold ${
+                  plan.originalPrice ? "text-amber-500" : "text-black"
+                }`}
+              >
+                ${plan.price}
+              </span>
+
+              <span className="text-gray-500 text-sm">NTD / 月</span>
+            </div>
+
+            {plan.desc && (
+              <p className="mt-2 text-sm text-gray-600">{plan.desc}</p>
+            )}
+
+            <ul className="mt-4 space-y-2 text-sm text-gray-700 text-left">
+              {plan.benefits.map((b, j) => (
+                <li key={j} className="flex items-start gap-2">
+                  <span className="text-amber-500 flex-shrink-0">
+                    <img className="w-5 " src="/assets/Podcoin.svg" alt="" />
+                  </span>
+                  <span className="leading-6">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* <button className="mt-6 w-full rounded-full bg-amber-400 py-2.5 text-sm font-semibold text-white hover:bg-amber-500">
+              訂閱
+            </button> */}
           </div>
         ))}
       </div>
@@ -431,30 +500,34 @@ const Community = () => (
           社群，與全球創作者連結、交流、合作，讓你的聲音被更多人聽見。
         </p>
       </div>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
           {
             name: "無厘頭生存",
             role: "Podcaster",
-            quote: "無厘頭的凌凌X正經八百的嘉嘉X偶爾亂入的祐G\n帶你進入工程師的日常生活👩‍💻\n無厘頭，不無聊，這就是生存之道👍",
+            quote:
+              "無厘頭的凌凌X正經八百的嘉嘉X偶爾亂入的祐G\n帶你進入工程師的日常生活👩‍💻\n無厘頭，不無聊，這就是生存之道👍",
             pic: "https://story.actpodapp.com/user/avatar/687bc22af58db60001691eda",
           },
           {
             name: "小人物職場",
             role: "Podcaster",
-            quote: "Hi 我是小人物，工作超過15年，文組畢業後跨領域轉職5次,目前於全球2000強企業負責軟體開發，擔任軟體產品經理/產品負責人 Product Manager/ Product Owner。",
-            pic:"https://story.actpodapp.com/user/avatar/68ad97634969fc000186be7f",
+            quote:
+              "Hi 我是小人物，工作超過15年，文組畢業後跨領域轉職5次,目前於全球2000強企業負責軟體開發，擔任軟體產品經理/產品負責人 Product Manager/ Product Owner。",
+            pic: "https://story.actpodapp.com/user/avatar/68ad97634969fc000186be7f",
           },
           {
             name: "吾言少女",
             role: "Podcaster",
-            quote: "想把好劇推給更多人知道，所以創立了「吾劇吾述」。內容會以陸劇、台劇為主，原因很單純，就是語言！我想要聽聲音、看畫面就好。",
-            pic:"https://story.actpodapp.com/user/avatar/6881b47b9076730001898b79",
-          },{
+            quote:
+              "想把好劇推給更多人知道，所以創立了「吾劇吾述」。內容會以陸劇、台劇為主，原因很單純，就是語言！我想要聽聲音、看畫面就好。",
+            pic: "https://story.actpodapp.com/user/avatar/6881b47b9076730001898b79",
+          },
+          {
             name: "來點人生薯條",
             role: "Podcaster",
             quote: "薯條's channel",
-            pic:"https://story.actpodapp.com/user/avatar/68444775bbde08000186f72e",
+            pic: "https://story.actpodapp.com/user/avatar/68444775bbde08000186f72e",
           },
         ].map((t, i) => (
           <div
@@ -462,13 +535,18 @@ const Community = () => (
             className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <img className="h-10 w-10 rounded-full bg-amber-200" src={t.pic} />
+              <img
+                className="h-10 w-10 rounded-full bg-amber-200"
+                src={t.pic}
+              />
               <div>
                 <div className="text-sm font-semibold">{t.name}</div>
                 <div className="text-xs text-gray-500">{t.role}</div>
               </div>
             </div>
-            <p className="mt-4 text-sm text-gray-600 whitespace-pre-line">{t.quote}</p>
+            <p className="mt-4 text-sm text-gray-600 whitespace-pre-line leading-6">
+              {t.quote}
+            </p>
           </div>
         ))}
       </div>
@@ -673,7 +751,7 @@ const Footer = () => (
         <a href="#features" className="hover:text-black">
           特色
         </a>
-        <a href="#flow" className="hover:text-black">
+        <a href="#plans" className="hover:text-black">
           流程
         </a>
         <a href="#community" className="hover:text-black">
@@ -693,7 +771,7 @@ export default function ActPodLanding() {
       <Nav />
       <Hero />
       <Features />
-      {/* <Flow /> */}
+      <MembershipPlans />
       <Community />
       <CTA />
     </div>
