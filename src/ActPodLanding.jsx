@@ -722,12 +722,22 @@ const CTA = () => (
       {/* 版權年份 */}
       <span className="text-gray-400 text-sm">© 2025 艾帕科技有限公司</span>
 
+      <span className="text-gray-500 text-sm">
+        統一編號：60761942
+      </span>
+
       {/* 地址 */}
       <span className="text-gray-500 text-sm">
         桃園市桃園區宏昌十二街532號2樓
       </span>
       <span className="text-gray-500 text-sm">
         <a href="mailto:contact.us@actpodapp.com">contact.us@actpodapp.com</a>
+      </span>
+
+      <span className="text-gray-500 text-sm">
+        <a href="/refund-policy">
+          退費政策
+        </a>
       </span>
     </Container>
   </section>

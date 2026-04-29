@@ -1,6 +1,13 @@
-import React from 'react'
-import ActPodLanding from './ActPodLanding'
+import React from "react";
+import ActPodLanding from "./ActPodLanding";
+import RefundPolicy from "./RefundPolicy";
 
 export default function App() {
-  return <ActPodLanding />
+  const path = window.location.pathname;
+
+  if (path === "/refund-policy") {
+    return <RefundPolicy />;
+  }
+
+  return <ActPodLanding />;
 }
