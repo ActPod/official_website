@@ -309,6 +309,20 @@ const Hero = () => (
   </section>
 );
 
+const PodCoinsGuide = () => (
+  <section className="bg-gradient-to-b from-white to-amber-50 py-16 sm:py-20">
+    <Container>
+      <div className="mt-10 overflow-hidden rounded-3xl border border-amber-100 bg-white shadow-xl">
+        <img
+          src="/assets/Podcoins_use_case.png"
+          alt="PodCoins 使用情境與購買說明"
+          className="h-auto w-full object-cover"
+        />
+      </div>
+    </Container>
+  </section>
+);
+
 const Features = () => (
   <section id="features" className="py-20">
     <Container>
@@ -779,6 +793,7 @@ export default function ActPodLanding() {
       <Nav />
       <Hero />
       <Features />
+      <PodCoinsGuide />
       <MembershipPlans />
       <Community />
       <CTA />
