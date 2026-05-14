@@ -407,7 +407,7 @@ const MembershipPlans = () => (
         <p className="mt-4 text-gray-600">解鎖更多功能，讓流量變現</p>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-4">
+      <div className="mt-12 mx-auto grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-3">
         {[
           {
             name: "Free 會員",
