@@ -440,19 +440,19 @@ const MembershipPlans = () => (
               "每月 3 次系統推播",
             ],
           },
-          {
-            name: "Union 方案",
-            price: "150",
-            tag: "早鳥限定 3 折",
-            originalPrice: "500",
-            highlight: false,
-            benefits: [
-              "單集 120 分鐘（包含已添加之聽眾留言）",
-              "分潤比 8:2（會員:平台）",
-              "可提領",
-              "可上架付費內容",
-            ],
-          },
+          // {
+          //   name: "Union 方案",
+          //   price: "150",
+          //   tag: "早鳥限定 3 折",
+          //   originalPrice: "500",
+          //   highlight: false,
+          //   benefits: [
+          //     "單集 120 分鐘（包含已添加之聽眾留言）",
+          //     "分潤比 8:2（會員:平台）",
+          //     "可提領",
+          //     "可上架付費內容",
+          //   ],
+          // },
         ].map((plan, i) => (
           <div
             key={i}
