@@ -310,12 +310,26 @@ const Hero = () => (
 );
 
 const PodCoinsGuide = () => (
-  <section className="bg-gradient-to-b from-white to-amber-50 py-16 sm:py-20">
+  <section>
     <Container>
       <div className="mt-10 overflow-hidden rounded-3xl border border-amber-100 bg-white shadow-xl">
         <img
           src="/assets/Podcoins_use_case.png"
           alt="PodCoins 使用情境與購買說明"
+          className="h-auto w-full object-cover"
+        />
+      </div>
+    </Container>
+  </section>
+);
+
+const PodCoinsToPodcashGuide = () => (
+  <section className="bg-gradient-to-b from-white to-amber-50 py-16 sm:py-20">
+    <Container>
+      <div className="mt-10 overflow-hidden rounded-3xl border border-amber-100 bg-white shadow-xl">
+        <img
+          src="/assets/podcash_and_podcoin.png"
+          alt="PodCoins 轉換 PodCash 說明"
           className="h-auto w-full object-cover"
         />
       </div>
@@ -400,29 +414,30 @@ const MembershipPlans = () => (
             price: "0",
             desc: "",
             benefits: [
-              "單集 60 分鐘（包含已添加之聽眾留言）",
-              "分潤比 2:8（會員:平台）",
-              "僅可創建 1 個頻道",
-              "不可提領",
+              "免費開啟陪聽房",
+              "免費擁有 Podcast Store 連結",
+              "免費互動房體驗 60 分鐘",
+              "RSS feed 綁定",
+              "提領 PodCash 需額外支付 200 元手續費",
             ],
           },
           {
-            name: "Pro 方案",
-            price: "150",
+            name: "Premium 方案",
+            price: "265",
             benefits: [
-              "單集 60 分鐘（包含已添加之聽眾留言）",
-              "分潤比 7:3（會員:平台）",
-              "可提領",
-            ],
-          },
-          {
-            name: "Studio 方案",
-            price: "400",
-            benefits: [
-              "單集 90 分鐘（包含已添加之聽眾留言）",
-              "分潤比 8:2（會員:平台）",
-              "可提領",
               "可上架付費內容",
+              "每月享有一次提領 PodCash 免手續費",
+              "互動房 1000 分鐘",
+              "開啟直播時通知粉絲"
+            ],
+          },
+          {
+            name: "Enterprise",
+            price: "1500",
+            benefits: [
+              "互動房人數上限 1000 人",
+              "互動房 3000 分鐘",
+              "每月 3 次系統推播",
             ],
           },
           {
@@ -436,7 +451,6 @@ const MembershipPlans = () => (
               "分潤比 8:2（會員:平台）",
               "可提領",
               "可上架付費內容",
-              "聯盟代碼",
             ],
           },
         ].map((plan, i) => (
@@ -794,6 +808,7 @@ export default function ActPodLanding() {
       <Hero />
       <Features />
       <PodCoinsGuide />
+      <PodCoinsToPodcashGuide />
       <MembershipPlans />
       <Community />
       <CTA />
