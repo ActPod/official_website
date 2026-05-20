@@ -333,6 +333,15 @@ const PodCoinsToPodcashGuide = () => (
           className="h-auto w-full object-cover"
         />
       </div>
+
+      <div className="mt-6 text-center">
+        <a
+          href="/podcash-terms"
+          className="inline-flex items-center justify-center rounded-full border border-amber-300 bg-white px-5 py-3 text-sm font-semibold text-amber-700 shadow-sm transition hover:bg-amber-50 hover:text-amber-800"
+        >
+          查看 PodCash 使用條款與兌換說明
+        </a>
+      </div>
     </Container>
   </section>
 );
