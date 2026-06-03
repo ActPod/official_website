@@ -295,11 +295,11 @@ const PodCoin = () => (
       />
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         <div className="relative overflow-hidden rounded-[2rem] border border-amber-200 bg-white p-6 shadow-sm">
-          <div className="absolute right-5 top-5 flex items-center gap-1 rounded-full bg-amber-100 px-3 py-2 text-sm font-bold text-amber-800">
+          <div className="mb-5 inline-flex items-center gap-1 rounded-full bg-amber-100 px-3 py-2 text-sm font-bold text-amber-800 sm:absolute sm:right-5 sm:top-5 sm:mb-0">
             <img src="/assets/podcoin.png" alt="" className="h-5 w-5" />
             傳送專屬貼圖
           </div>
-          <h3 className="max-w-sm text-2xl font-bold text-gray-950">用專屬貼圖傳送你的心情</h3>
+          <h3 className="max-w-sm text-2xl font-bold text-gray-950 sm:pr-36">用專屬貼圖傳送你的心情</h3>
           <p className="mt-3 max-w-md leading-7 text-gray-600">
             購買 PodCoin 後，可以在 App 內傳送專屬角色貼圖，聊天互動時直接使用。
           </p>
@@ -311,11 +311,11 @@ const PodCoin = () => (
         </div>
 
         <div id="podcast-room" className="relative overflow-hidden rounded-[2rem] border border-black/10 bg-black p-6 text-white shadow-sm">
-          <div className="absolute right-5 top-5 flex items-center gap-1 rounded-full bg-white/10 px-3 py-2 text-sm font-bold text-amber-200">
+          <div className="mb-5 inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-2 text-sm font-bold text-amber-200 sm:absolute sm:right-5 sm:top-5 sm:mb-0">
             <img src="/assets/podcoin.png" alt="" className="h-5 w-5" />
             兌換入場券
           </div>
-          <h3 className="max-w-sm text-2xl font-bold">Podcast 陪聽房入場券</h3>
+          <h3 className="max-w-sm text-2xl font-bold sm:pr-36">Podcast 陪聽房入場券</h3>
           <p className="mt-3 max-w-md leading-7 text-white/75">
             使用 PodCoin 兌換陪聽房入場券，進入即時互動空間，和主持人與聽眾一起討論 Podcast。
           </p>
