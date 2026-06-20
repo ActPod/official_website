@@ -1,6 +1,7 @@
 import React from "react";
 
 const contactEmail = "contact.us@actpodapp.com";
+const webAppUrl = "https://web.actpodapp.com";
 
 const Container = ({ children, className = "" }) => (
   <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>
@@ -17,9 +18,11 @@ const PrimaryButton = ({ children, href }) => (
   </a>
 );
 
-const SecondaryButton = ({ children, href }) => (
+const SecondaryButton = ({ children, href, target }) => (
   <a
     href={href}
+    target={target}
+    rel={target === "_blank" ? "noopener noreferrer" : undefined}
     className="inline-flex items-center justify-center rounded-2xl border border-black/15 bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-black/5"
   >
     {children}
@@ -71,7 +74,15 @@ const Nav = () => (
           上架合作
         </a>
       </nav>
-      <div className="hidden md:block">
+      <div className="hidden items-center gap-3 md:flex">
+        <a
+          href={webAppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold text-gray-700 transition hover:text-black"
+        >
+          開啟 Web App
+        </a>
         <PrimaryButton href="#download">免費下載</PrimaryButton>
       </div>
     </Container>
@@ -193,6 +204,17 @@ const Hero = () => (
           <PrimaryButton href="#paid-podcast">了解購買方式</PrimaryButton>
           <SecondaryButton href="#podcoin">PodCoin 可以做什麼</SecondaryButton>
         </div>
+        <p className="mt-4 text-sm text-gray-600">
+          已經有帳號？
+          <a
+            href={webAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-gray-950 underline underline-offset-4 transition hover:text-amber-700"
+          >
+            開啟 Web App
+          </a>
+        </p>
         <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
           <ProductPill icon="🎧" title="限定 Podcast 內容" desc="購買後於 App 內收聽限定 Podcast內容。" />
           <ProductPill icon="💬" title="專屬貼圖" desc="使用 PodCoin 傳送專屬貼圖。" />
@@ -431,6 +453,14 @@ const CTA = () => (
             className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-semibold transition hover:bg-white/10"
           >
             Google Play
+          </a>
+          <a
+            href={webAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+          >
+            開啟 Web App
           </a>
         </div>
       </div>
