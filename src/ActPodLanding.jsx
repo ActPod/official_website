@@ -2,6 +2,7 @@ import React from "react";
 
 const contactEmail = "contact.us@actpodapp.com";
 const webAppUrl = "https://web.actpodapp.com";
+const yumaPackageUrl = "https://web.actpodapp.com/package/6a324b8c8bd71c0001085dc1";
 
 const Container = ({ children, className = "" }) => (
   <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>
@@ -183,7 +184,7 @@ const FeatureShowcase = () => (
 );
 
 const Hero = () => (
-  <section className="relative overflow-hidden bg-gradient-to-b from-amber-100 via-white to-white py-16 sm:py-20">
+  <section className="relative overflow-hidden py-16 sm:py-20">
     <Container className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
       <div>
         <div className="mb-5 flex flex-wrap items-center gap-2">
@@ -249,6 +250,33 @@ const Hero = () => (
       </div>
     </Container>
   </section>
+);
+
+const CampaignBanner = () => (
+  <section className="py-8 sm:py-10">
+    <Container>
+      <a
+        href={yumaPackageUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="前往 Yuma 限定 Podcast 套裝頁面"
+        className="group block overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+      >
+        <img
+          src="/assets/yuma_banner.png"
+          alt="Yuma 限定 Podcast 套裝"
+          className="h-auto w-full"
+        />
+      </a>
+    </Container>
+  </section>
+);
+
+const TopShowcase = () => (
+  <div className="bg-gradient-to-b from-amber-100 via-white to-white">
+    <CampaignBanner />
+    <Hero />
+  </div>
 );
 
 const PaidPodcast = () => (
@@ -483,7 +511,7 @@ export default function ActPodLanding() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Nav />
-      <Hero />
+      <TopShowcase />
       <PaidPodcast />
       <PodCoin />
       <Rules />
