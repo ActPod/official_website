@@ -184,7 +184,7 @@ const FeatureShowcase = () => (
 );
 
 const Hero = () => (
-  <section className="relative overflow-hidden py-16 sm:py-20">
+  <section className="relative overflow-hidden pb-16 pt-6 sm:pb-20 sm:pt-8">
     <Container className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
       <div>
         <div className="mb-5 flex flex-wrap items-center gap-2">
@@ -253,14 +253,14 @@ const Hero = () => (
 );
 
 const CampaignBanner = () => (
-  <section className="py-8 sm:py-10">
-    <Container>
+  <section className="pb-0 pt-0 sm:py-6">
+    <div className="relative left-1/2 w-screen -translate-x-1/2 sm:left-auto sm:mx-auto sm:w-full sm:max-w-7xl sm:translate-x-0 sm:px-6 lg:px-8">
       <a
         href={yumaPackageUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="前往 Yuma 限定 Podcast 套裝頁面"
-        className="group block overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+        className="group block overflow-hidden bg-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:rounded-2xl sm:border sm:border-black/10"
       >
         <img
           src="/assets/yuma_banner.png"
@@ -268,7 +268,7 @@ const CampaignBanner = () => (
           className="h-auto w-full"
         />
       </a>
-    </Container>
+    </div>
   </section>
 );
 
