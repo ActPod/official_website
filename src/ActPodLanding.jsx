@@ -262,11 +262,14 @@ const CampaignBanner = () => (
         aria-label="前往 Yuma 限定 Podcast 套裝頁面"
         className="group block overflow-hidden bg-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:rounded-2xl sm:border sm:border-black/10"
       >
-        <img
-          src="/assets/yuma_banner.png"
-          alt="Yuma 限定 Podcast 套裝"
-          className="h-auto w-full"
-        />
+        <picture>
+          <source media="(max-width: 639px)" srcSet="/assets/yuma_mobile_banner.png" />
+          <img
+            src="/assets/yuma_banner.png"
+            alt="Yuma 限定 Podcast 套裝"
+            className="h-auto w-full"
+          />
+        </picture>
       </a>
     </div>
   </section>
